@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confeitaria Lucrativa - 50 Receitas + 30 Bônus</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #faf7f2;
+    color: #3d2b1a;
+    line-height: 1.6;
+  }
+  .container { max-width: 780px; margin: 0 auto; padding: 20px; }
+
+  /* CAPA */
+  .capa {
+    text-align: center;
+    padding: 40px 20px 30px;
+    background: linear-gradient(180deg, #f5efe6 0%, #faf7f2 100%);
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+  .capa img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    margin-bottom: 20px;
+  }
+  .capa h1 {
+    font-size: 2.2em;
+    color: #7a3b2a;
+    margin-bottom: 8px;
+  }
+  .capa p.sub {
+    font-size: 1.1em;
+    color: #8a6b4a;
+    margin-bottom: 20px;
+  }
+
+  /* SEÇÕES */
+  section { margin-bottom: 40px; }
+  h2 {
+    font-size: 1.6em;
+    color: #7a3b2a;
+    border-bottom: 3px solid #d4a857;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+  h3 {
+    font-size: 1.2em;
+    color: #5a3a2a;
+    margin: 15px 0 8px;
+  }
+
+  /* QUEM SOU EU */
+  .bio {
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+  }
+  .bio-foto {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #d4a857;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .bio-texto { flex: 1; }
+  .bio-texto p { margin-bottom: 12px; }
+
+  /* LISTA DE RECEITAS */
+  .grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .grade li {
+    list-style: none;
+    padding: 4px 0;
+    border-bottom: 1px dashed #ece3d6;
+    font-size: 0.92em;
+  }
+  .grade li::before { content: "\2713\0020"; color: #c49a4a; font-weight: bold; }
+  .grade .bonus { color: #8a5a30; font-style: italic; }
+  .grade .bonus::before { content: "\2605\0020"; color: #d4a857; font-style: normal; }
+
+  /* BÔNUS */
+  .bloco-bonus {
+    background: linear-gradient(135deg, #fdf8f0, #f5efe6);
+    border: 2px solid #d4a857;
+    border-radius: 14px;
+    padding: 25px;
+    text-align: center;
+  }
+  .bloco-bonus h3 { color: #7a3b2a; font-size: 1.4em; }
+  .bloco-bonus p { font-size: 1.05em; margin: 8px 0; }
+
+  /* CERTIFICADO */
+  .cert-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+  .cert-box img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 15px 0;
+  }
+
+  /* CTA */
+  .cta {
+    text-align: center;
+    background: linear-gradient(135deg, #7a3b2a, #5a2a1a);
+    padding: 40px 25px;
+    border-radius: 20px;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+  .cta h2 { color: #fff; border: none; font-size: 1.8em; margin-bottom: 10px; }
+  .cta .preco {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #f5d48a;
+    margin: 10px 0;
+  }
+  .cta .preco small { font-size: 0.4em; color: #d4b88a; }
+  .cta .btn {
+    display: inline-block;
+    background: #d4a857;
+    color: #3d2b1a;
+    padding: 16px 50px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(212,168,87,0.4);
+  }
+  .cta .btn:hover { background: #e0b86a; transform: scale(1.03); }
+  .cta p.aviso { margin-top: 12px; font-size: 0.85em; color: #d4b88a; }
+
+  /* FAQ */
+  .faq-item {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  }
+  .faq-item strong { color: #7a3b2a; display: block; margin-bottom: 4px; }
+
+  /* RODAPÉ */
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: #a08972;
+    font-size: 0.85em;
+    border-top: 1px solid #ece3d6;
+  }
+
+  @media (max-width: 600px) {
+    .capa h1 { font-size: 1.5em; }
+    .grade { grid-template-columns: 1fr; }
+    .cta .preco { font-size: 2em; }
+    .cta .btn { padding: 14px 30px; font-size: 1.1em; }
+    .bio { flex-direction: column; align-items: center; text-align: center; }
+    .bio-foto { width: 140px; height: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- CAPA -->
+  <div class="capa">
+    <img src="Confeitaria_Lucrativa_capa.jpg" alt="Confeitaria Lucrativa - Ebook">
+    <h1>Confeitaria Lucrativa</h1>
+    <p class="sub">50 Receitas Testadas + 30 Recheios Bônus + Estratégias de Vendas</p>
+  </div>
+
+  <!-- QUEM SOU EU -->
+  <section>
+    <h2>Quem Sou Eu</h2>
+    <div class="bio">
+      <img class="bio-foto" src="carolina_ribeira_foto.jpg" alt="Carolina Ribeiro">
+      <div class="bio-texto">
+      <p><strong>Olá, sou Carolina Ribeiro</strong>, criadora da <strong>Delícias na Hora</strong>.</p>
+      <p>Minha história na confeitaria começou de forma simples: uma vontade de empreender, uma batedeira e uma cozinha modesta. Passei madrugadas testando receitas, errei muitas vezes, aprendi com cada erro — e transformei esse conhecimento em um negócio real, que começou com vendas de porta em porta para as vizinhas.</p>
+      <p>Com dedicação e muito estudo, meu trabalho chegou ao <strong>iFood</strong>, onde conquistei uma base de clientes fiéis. Mas eu sabia que podia ir além — então comecei a ensinar outras mulheres que, assim como eu, queriam começar na confeitaria mas não tinham por onde.</p>
+      <p><strong>Já ajudei centenas de alunas a dar o primeiro passo</strong> e hoje estou aqui para compartilhar com você tudo o que aprendi. Este ebook reúne o melhor do meu conhecimento para que você também possa transformar sua cozinha em uma fonte de renda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ VAI LEVAR -->
+  <section>
+    <h2>O Que Você Vai Aprender</h2>
+    <div class="grade">
+      <li>Bolo de Cenoura com Cobertura</li>
+      <li>Bolo de Chocolate Fofinho</li>
+      <li>Bolo de Laranja</li>
+      <li>Bolo de Milho Cremoso</li>
+      <li>Bolo de Limão</li>
+      <li>Bolo de Banana</li>
+      <li>Bolo de Coco</li>
+      <li>Bolo de Fubá</li>
+      <li>Bolo de Iogurte</li>
+      <li>Bolo de Maçã</li>
+      <li>Bolo de Maracujá</li>
+      <li>Bolo de Abacaxi</li>
+      <li>Bolo de Morango</li>
+      <li>Bolo de Amendoim</li>
+      <li>Bolo de Leite Ninho</li>
+      <li>Bolo de Paçoca</li>
+      <li>Bolo de Prestígio</li>
+      <li>Bolo de Doce de Leite</li>
+      <li>Bolo de Goiaba</li>
+      <li>Bolo de Jabuticaba</li>
+      <li>Bolo de Nozes</li>
+      <li>Bolo de Aipim</li>
+      <li>Bolo de Queijo</li>
+      <li>Bolo de Tapioca</li>
+      <li>Bolo de Mel</li>
+      <li>Bolo de Erva Doce</li>
+      <li>Bolo de Canela</li>
+      <li>Bolo Casadinho</li>
+      <li>Bolo Mármore</li>
+      <li>Bolo Nega Maluca</li>
+      <li>Bolo de Brigadeiro</li>
+      <li>Bolo de Beijinho</li>
+      <li>Bolo de Cajuzinho</li>
+      <li>Bolo de Amendoas</li>
+      <li>Bolo de Avelã</li>
+      <li>Bolo de Café</li>
+      <li>Bolo de Caramelo</li>
+      <li>Bolo de Cerveja Preta</li>
+      <li>Bolo de Vinho</li>
+      <li>Bolo de Frutas Vermelhas</li>
+      <li>Bolo de Pêssego</li>
+      <li>Bolo de Damasco</li>
+      <li>Bolo de Figo</li>
+      <li>Bolo de Uva</li>
+      <li>Bolo de Capuccino</li>
+      <li>Bolo de Menta</li>
+      <li>Bolo de Gengibre</li>
+      <li>Bolo de Churros</li>
+      <li>Bolo de Rapadura</li>
+      <li>Bolo de Leite Condensado</li>
+      <li class="bonus">Brigadeiro Gourmet</li>
+      <li class="bonus">Beijinho Cremoso</li>
+      <li class="bonus">Cajuzinho</li>
+      <li class="bonus">Doce de Leite Caseiro</li>
+      <li class="bonus">Ganache de Chocolate</li>
+      <li class="bonus">Creme de Avelã</li>
+      <li class="bonus">Creme de Morango</li>
+      <li class="bonus">Creme de Limão</li>
+      <li class="bonus">Creme de Maracujá</li>
+      <li class="bonus">Creme de Coco</li>
+      <li class="bonus">Creme de Amendoim</li>
+      <li class="bonus">Creme de Pistache</li>
+      <li class="bonus">Creme de Leite Ninho</li>
+      <li class="bonus">Creme de Paçoca</li>
+      <li class="bonus">Doce de Leite</li>
+      <li class="bonus">Geleia de Morango</li>
+      <li class="bonus">Geleia de Frutas Vermelhas</li>
+      <li class="bonus">Geleia de Abacaxi</li>
+      <li class="bonus">Geleia de Maracujá</li>
+      <li class="bonus">Creme Belga</li>
+      <li class="bonus">Creme de Manteiga</li>
+      <li class="bonus">Creme Diplomata</li>
+      <li class="bonus">Creme de Confeiteiro</li>
+      <li class="bonus">Chantilly Caseiro</li>
+      <li class="bonus">Merengue Italiano</li>
+      <li class="bonus">Buttercream</li>
+      <li class="bonus">Creme de Amêndoas</li>
+      <li class="bonus">Creme de Café</li>
+      <li class="bonus">Creme de Caramelo</li>
+      <li class="bonus">Recheio de Churros</li>
+      <li class="bonus">Recheio de Paçoca</li>
+      <li class="bonus">Recheio de Prestígio</li>
+    </div>
+    <p style="text-align:center; margin-top:10px; color:#8a6b4a;">⭐ Os 30 itens em <em>itálico</em> são os <strong>recheios bônus</strong>!</p>
+  </section>
+
+  <!-- BÔNUS -->
+  <section>
+    <h2>Bônus Exclusivos</h2>
+    <div class="bloco-bonus">
+      <h3>🎁 30 Recheios Especiais</h3>
+      <p>Brigadeiro Gourmet, Beijinho Cremoso, Ganache, Creme de Avelã, Buttercream e muito mais!</p>
+      <p style="margin-top:12px;"><strong>🎁 Estratégias de Vendas</strong></p>
+      <p>Um guia completo com técnicas para precificar seus bolos, vender bem no iFood, divulgar no WhatsApp e fidelizar clientes.</p>
+      <p style="margin-top:12px;"><strong>🎁 Certificado de Conclusão</strong></p>
+      <p>Modelo exclusivo e chique para você emitir com seu nome ao terminar o curso.</p>
+    </div>
+  </section>
+
+  <!-- PARA QUEM É -->
+  <section>
+    <h2>Para Quem É Este Ebook</h2>
+    <div style="background:#fff; padding:20px 25px; border-radius:14px; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+      <p>✅ Quem quer começar na confeitaria e não sabe por onde</p>
+      <p>✅ Quem já faz bolos mas quer diversificar o cardápio</p>
+      <p>✅ Quem quer vender doces como renda extra</p>
+      <p>✅ Donas de casa que querem empreender da própria cozinha</p>
+      <p>✅ Confeiteiras que buscam receitas testadas e aprovadas</p>
+    </div>
+  </section>
+
+  <!-- CERTIFICADO -->
+  <section>
+    <h2>Certificado de Conclusão</h2>
+    <div class="cert-box">
+      <img src="certificado_imagem.jpg" alt="Modelo de Certificado">
+      <p>Ao final, você pode emitir um <strong>certificado chique</strong> com seu nome, assinado por Carolina Ribeiro — perfeito para comprovar seu conhecimento e até incluir no currículo ou redes sociais.</p>
+      <p style="margin-top:10px; font-style:italic; color:#8a6b4a;">Modelo paisagem, fundo creme, moldura dourada e design exclusivo.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Garanta Seu Ebook Agora</h2>
+    <p>50 receitas + 30 recheios bônus + estratégias de vendas + certificado</p>
+    <div class="preco">R$ 10,00 <small>/ à vista</small></div>
+    <a class="btn" href="#">QUERO MEU EBOOK</a>
+    <p class="aviso">Pagamento 100% seguro • Acesso vitalício • PDF para baixar</p>
+  </div>
+
+  <!-- FAQ -->
+  <section>
+    <h2>Dúvidas Frequentes</h2>
+    <div class="faq-item">
+      <strong>📌 Como vou receber o ebook?</strong>
+      <p>Após a confirmação do pagamento, você recebe um link para baixar o PDF direto no seu e-mail.</p>
+    </div>
+    <div class="faq-item">
+      <strong>📌 Preciso de experiência em confeitaria?</strong>
+      <p>Não! As receitas são explicadas passo a passo, com ingredientes simples, ideal para iniciantes.</p>
+    </div>
+    <div class="faq-item">
+      <strong>📌 O certificado é incluso?</strong>
+      <p>Sim! Você recebe o modelo do certificado junto com o ebook, personalizável com seu nome.</p>
+    </div>
+    <div class="faq-item">
+      <strong>📌 Tem garantia?</strong>
+      <p>Sim — se por algum motivo você não ficar satisfeita, devolvemos 100% do seu dinheiro.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Delícias na Hora &copy; 2026 — Carolina Ribeiro</p>
+    <p>Este produto é vendido por <strong>Carolina Ribeiro</strong> e não tem vínculo com iFood ou qualquer plataforma citada.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
