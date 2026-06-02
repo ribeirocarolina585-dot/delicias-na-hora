@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Confeitaria Lucrativa - 50 Receitas + 30 Bônus</title>
+<title>Confeitaria Lucrativa - 50 Receitas + 30 Recheios Bônus</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -12,12 +12,12 @@
     color: #3d2b1a;
     line-height: 1.6;
   }
-  .container { max-width: 780px; margin: 0 auto; padding: 20px; }
+  .container { max-width: 820px; margin: 0 auto; padding: 20px; }
 
   /* CAPA */
   .capa {
     text-align: center;
-    padding: 40px 20px 30px;
+    padding: 30px 20px;
     background: linear-gradient(180deg, #f5efe6 0%, #faf7f2 100%);
     border-radius: 20px;
     margin-bottom: 30px;
@@ -26,28 +26,37 @@
     max-width: 100%;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     margin-bottom: 20px;
   }
   .capa h1 {
-    font-size: 2.2em;
+    font-size: 2.4em;
     color: #7a3b2a;
     margin-bottom: 8px;
   }
   .capa p.sub {
-    font-size: 1.1em;
+    font-size: 1.15em;
     color: #8a6b4a;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+  .capa .destaque {
+    display: inline-block;
+    background: #7a3b2a;
+    color: #f5d48a;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 10px;
   }
 
-  /* SEÇÕES */
   section { margin-bottom: 40px; }
   h2 {
     font-size: 1.6em;
     color: #7a3b2a;
     border-bottom: 3px solid #d4a857;
     padding-bottom: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
   h3 {
     font-size: 1.2em;
@@ -77,20 +86,41 @@
   .bio-texto { flex: 1; }
   .bio-texto p { margin-bottom: 12px; }
 
+  /* MÓDULOS */
+  .modulos { display: flex; flex-direction: column; gap: 14px; }
+  .modulo {
+    background: #fff;
+    padding: 18px 22px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-left: 4px solid #d4a857;
+  }
+  .modulo h3 { margin: 0 0 4px; color: #7a3b2a; }
+  .modulo p { font-size: 0.95em; color: #5a4a3a; }
+
   /* LISTA DE RECEITAS */
+  .categoria-receitas {
+    background: #fff;
+    padding: 18px 22px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 14px;
+  }
+  .categoria-receitas h3 {
+    color: #7a3b2a;
+    border-bottom: 1px dashed #ece3d6;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
   .grade {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px 20px;
-    background: #fff;
-    padding: 20px 25px;
-    border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    gap: 6px 20px;
   }
   .grade li {
     list-style: none;
     padding: 4px 0;
-    border-bottom: 1px dashed #ece3d6;
+    border-bottom: 1px dashed #f0ebe2;
     font-size: 0.92em;
   }
   .grade li::before { content: "\2713\0020"; color: #c49a4a; font-weight: bold; }
@@ -103,10 +133,20 @@
     border: 2px solid #d4a857;
     border-radius: 14px;
     padding: 25px;
-    text-align: center;
   }
-  .bloco-bonus h3 { color: #7a3b2a; font-size: 1.4em; }
-  .bloco-bonus p { font-size: 1.05em; margin: 8px 0; }
+  .bloco-bonus h3 { color: #7a3b2a; font-size: 1.3em; margin-bottom: 12px; }
+  .bonus-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ece3d6;
+  }
+  .bonus-item:last-child { border: none; }
+  .bonus-item .icone { font-size: 1.8em; }
+  .bonus-item .texto { flex: 1; }
+  .bonus-item .texto strong { display: block; color: #7a3b2a; }
+  .bonus-item .texto span { font-size: 0.9em; color: #6a5a4a; }
 
   /* CERTIFICADO */
   .cert-box {
@@ -123,11 +163,20 @@
     margin: 15px 0;
   }
 
+  /* PARA QUEM É */
+  .para-quem {
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .para-quem p { padding: 6px 0; }
+
   /* CTA */
   .cta {
     text-align: center;
     background: linear-gradient(135deg, #7a3b2a, #5a2a1a);
-    padding: 40px 25px;
+    padding: 45px 25px;
     border-radius: 20px;
     color: #fff;
     margin-bottom: 30px;
@@ -137,7 +186,7 @@
     font-size: 2.8em;
     font-weight: bold;
     color: #f5d48a;
-    margin: 10px 0;
+    margin: 12px 0;
   }
   .cta .preco small { font-size: 0.4em; color: #d4b88a; }
   .cta .btn {
@@ -152,6 +201,7 @@
     margin-top: 15px;
     transition: 0.3s;
     box-shadow: 0 4px 15px rgba(212,168,87,0.4);
+    cursor: pointer;
   }
   .cta .btn:hover { background: #e0b86a; transform: scale(1.03); }
   .cta p.aviso { margin-top: 12px; font-size: 0.85em; color: #d4b88a; }
@@ -166,7 +216,6 @@
   }
   .faq-item strong { color: #7a3b2a; display: block; margin-bottom: 4px; }
 
-  /* RODAPÉ */
   footer {
     text-align: center;
     padding: 20px;
@@ -193,7 +242,8 @@
   <div class="capa">
     <img src="Confeitaria_Lucrativa_capa.jpg" alt="Confeitaria Lucrativa - Ebook">
     <h1>Confeitaria Lucrativa</h1>
-    <p class="sub">50 Receitas Testadas + 30 Recheios Bônus + Estratégias de Vendas</p>
+    <p class="sub">50 Receitas Testadas + 30 Recheios Bônus + Estratégias de Vendas + Certificado</p>
+    <div class="destaque">🔥 Lançamento — R$ 10,00</div>
   </div>
 
   <!-- QUEM SOU EU -->
@@ -210,60 +260,123 @@
     </div>
   </section>
 
-  <!-- O QUE VOCÊ VAI LEVAR -->
+  <!-- O QUE VOCÊ VAI APRENDER - MÓDULOS -->
   <section>
     <h2>O Que Você Vai Aprender</h2>
-    <div class="grade">
-      <li>Bolo de Cenoura com Cobertura</li>
-      <li>Bolo de Chocolate Fofinho</li>
-      <li>Bolo de Laranja</li>
-      <li>Bolo de Milho Cremoso</li>
-      <li>Bolo de Limão</li>
-      <li>Bolo de Banana</li>
-      <li>Bolo de Coco</li>
-      <li>Bolo de Fubá</li>
-      <li>Bolo de Iogurte</li>
-      <li>Bolo de Maçã</li>
-      <li>Bolo de Maracujá</li>
-      <li>Bolo de Abacaxi</li>
-      <li>Bolo de Morango</li>
-      <li>Bolo de Amendoim</li>
-      <li>Bolo de Leite Ninho</li>
-      <li>Bolo de Paçoca</li>
-      <li>Bolo de Prestígio</li>
-      <li>Bolo de Doce de Leite</li>
-      <li>Bolo de Goiaba</li>
-      <li>Bolo de Jabuticaba</li>
-      <li>Bolo de Nozes</li>
-      <li>Bolo de Aipim</li>
-      <li>Bolo de Queijo</li>
-      <li>Bolo de Tapioca</li>
-      <li>Bolo de Mel</li>
-      <li>Bolo de Erva Doce</li>
-      <li>Bolo de Canela</li>
-      <li>Bolo Casadinho</li>
-      <li>Bolo Mármore</li>
-      <li>Bolo Nega Maluca</li>
-      <li>Bolo de Brigadeiro</li>
-      <li>Bolo de Beijinho</li>
-      <li>Bolo de Cajuzinho</li>
-      <li>Bolo de Amendoas</li>
-      <li>Bolo de Avelã</li>
-      <li>Bolo de Café</li>
-      <li>Bolo de Caramelo</li>
-      <li>Bolo de Cerveja Preta</li>
-      <li>Bolo de Vinho</li>
-      <li>Bolo de Frutas Vermelhas</li>
-      <li>Bolo de Pêssego</li>
-      <li>Bolo de Damasco</li>
-      <li>Bolo de Figo</li>
-      <li>Bolo de Uva</li>
-      <li>Bolo de Capuccino</li>
-      <li>Bolo de Menta</li>
-      <li>Bolo de Gengibre</li>
-      <li>Bolo de Churros</li>
-      <li>Bolo de Rapadura</li>
-      <li>Bolo de Leite Condensado</li>
+    <p style="margin-bottom:16px; font-size:1.05em; color:#5a4a3a;">Este ebook foi dividido em módulos práticos para você ir do zero às primeiras vendas:</p>
+
+    <div class="modulos">
+      <div class="modulo">
+        <h3>📖 Módulo 1 — Fundamentos da Confeitaria</h3>
+        <p>Utensílios essenciais, ingredientes básicos, técnicas de pesagem, como preparar formas, ponto certo das massas e dicas para não errar nunca mais.</p>
+      </div>
+      <div class="modulo">
+        <h3>🧁 Módulo 2 — 50 Receitas de Bolos Passo a Passo</h3>
+        <p>Dos clássicos (cenoura, chocolate, limão) aos diferenciados (churros, rapadura, capuccino) — todas testadas, com ingredientes acessíveis e modo de preparo detalhado.</p>
+      </div>
+      <div class="modulo">
+        <h3>🥄 Módulo 3 — 30 Recheios & Coberturas Profissionais</h3>
+        <p>Brigadeiro gourmet, buttercream, ganache, creme de avelã, chantilly caseiro, merengue italiano e muito mais para você sofisticar seus bolos.</p>
+      </div>
+      <div class="modulo">
+        <h3>💰 Módulo 4 — Estratégias de Vendas</h3>
+        <p>Como precificar seus bolos, embalagens que vendem, como divulgar no WhatsApp, dicas para vender no iFood, como fidelizar clientes e crescer aos poucos.</p>
+      </div>
+      <div class="modulo">
+        <h3>📜 Módulo 5 — Certificado de Conclusão</h3>
+        <p>Modelo exclusivo e chique para você emitir com seu nome — perfeito para comprovar seu conhecimento e compartilhar nas redes sociais.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTA COMPLETA DE RECEITAS -->
+  <section>
+    <h2>As 50 Receitas Que Você Vai Aprender</h2>
+    <p style="margin-bottom:14px; font-size:0.95em; color:#8a6b4a;">Todas explicadas em detalhes, com ingredientes simples e modo de preparo passo a passo:</p>
+
+    <div class="categoria-receitas">
+      <h3>🥥 Bolos Cremosos & Tradicionais</h3>
+      <ul class="grade">
+        <li>Bolo de Cenoura com Cobertura</li>
+        <li>Bolo de Chocolate Fofinho</li>
+        <li>Bolo de Laranja</li>
+        <li>Bolo de Milho Cremoso</li>
+        <li>Bolo de Limão</li>
+        <li>Bolo de Coco</li>
+        <li>Bolo de Fubá</li>
+        <li>Bolo de Iogurte</li>
+        <li>Bolo de Banana</li>
+        <li>Bolo de Queijo</li>
+        <li>Bolo de Tapioca</li>
+        <li>Bolo de Aipim</li>
+      </ul>
+    </div>
+
+    <div class="categoria-receitas">
+      <h3>🍓 Bolos Frutados & Refrescantes</h3>
+      <ul class="grade">
+        <li>Bolo de Maracujá</li>
+        <li>Bolo de Abacaxi</li>
+        <li>Bolo de Morango</li>
+        <li>Bolo de Maçã</li>
+        <li>Bolo de Goiaba</li>
+        <li>Bolo de Jabuticaba</li>
+        <li>Bolo de Pêssego</li>
+        <li>Bolo de Damasco</li>
+        <li>Bolo de Figo</li>
+        <li>Bolo de Uva</li>
+        <li>Bolo de Frutas Vermelhas</li>
+        <li>Bolo de Mel</li>
+      </ul>
+    </div>
+
+    <div class="categoria-receitas">
+      <h3>🍫 Bolos Especiais & Gourmet</h3>
+      <ul class="grade">
+        <li>Bolo Nega Maluca</li>
+        <li>Bolo de Brigadeiro</li>
+        <li>Bolo de Beijinho</li>
+        <li>Bolo de Cajuzinho</li>
+        <li>Bolo de Prestígio</li>
+        <li>Bolo de Doce de Leite</li>
+        <li>Bolo Casadinho</li>
+        <li>Bolo Mármore</li>
+        <li>Bolo de Leite Ninho</li>
+        <li>Bolo de Paçoca</li>
+        <li>Bolo de Amendoim</li>
+        <li>Bolo de Nozes</li>
+        <li>Bolo de Amêndoas</li>
+        <li>Bolo de Avelã</li>
+      </ul>
+    </div>
+
+    <div class="categoria-receitas">
+      <h3>☕ Bolos Diferenciados & Especiais</h3>
+      <ul class="grade">
+        <li>Bolo de Café</li>
+        <li>Bolo de Capuccino</li>
+        <li>Bolo de Caramelo</li>
+        <li>Bolo de Canela</li>
+        <li>Bolo de Erva Doce</li>
+        <li>Bolo de Menta</li>
+        <li>Bolo de Gengibre</li>
+        <li>Bolo de Cerveja Preta</li>
+        <li>Bolo de Vinho</li>
+        <li>Bolo de Churros</li>
+        <li>Bolo de Rapadura</li>
+        <li>Bolo de Leite Condensado</li>
+      </ul>
+    </div>
+
+    <p style="text-align:center; margin-top:10px; color:#8a6b4a;"><strong>Total: 50 receitas</strong> — todas testadas e aprovadas!</p>
+  </section>
+
+  <!-- 30 RECHEIOS BÔNUS -->
+  <section>
+    <h2>🎁 30 Recheios & Coberturas Bônus</h2>
+    <p style="margin-bottom:14px; font-size:0.95em; color:#8a6b4a;">Além das 50 receitas, você leva de brinde estes recheios profissionais:</p>
+
+    <div class="grade" style="background:#fff; padding:18px 22px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
       <li class="bonus">Brigadeiro Gourmet</li>
       <li class="bonus">Beijinho Cremoso</li>
       <li class="bonus">Cajuzinho</li>
@@ -297,31 +410,69 @@
       <li class="bonus">Recheio de Paçoca</li>
       <li class="bonus">Recheio de Prestígio</li>
     </div>
-    <p style="text-align:center; margin-top:10px; color:#8a6b4a;">⭐ Os 30 itens em <em>itálico</em> são os <strong>recheios bônus</strong>!</p>
   </section>
 
-  <!-- BÔNUS -->
+  <!-- ESTRATÉGIAS DE VENDAS -->
+  <section>
+    <h2>💰 Estratégias de Vendas</h2>
+    <div class="modulos">
+      <div class="modulo">
+        <h3>💲 Como Precificar Seus Bolos</h3>
+        <p>Aprenda a calcular o custo real de cada receita, margem de lucro ideal e como chegar no preço justo sem perder dinheiro.</p>
+      </div>
+      <div class="modulo">
+        <h3>📱 Vendas no WhatsApp & Redes Sociais</h3>
+        <p>Estratégias de divulgação orgânica (sem anúncios pagos), como tirar fotos atraentes com o celular, dicas de legenda e stories que vendem.</p>
+      </div>
+      <div class="modulo">
+        <h3>🛵 Como Vender no iFood</h3>
+        <p>Passo a passo para cadastrar seu negócio, fotos que convertem, descrições que vendem e como se destacar dos concorrentes.</p>
+      </div>
+      <div class="modulo">
+        <h3>🤝 Fidelização de Clientes</h3>
+        <p>Técnicas simples para fazer o cliente voltar sempre: pós-venda, lembrancinhas, programa de fidelidade e marketing boca a boca.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BÔNUS EXCLUSIVOS -->
   <section>
     <h2>Bônus Exclusivos</h2>
     <div class="bloco-bonus">
-      <h3>🎁 30 Recheios Especiais</h3>
-      <p>Brigadeiro Gourmet, Beijinho Cremoso, Ganache, Creme de Avelã, Buttercream e muito mais!</p>
-      <p style="margin-top:12px;"><strong>🎁 Estratégias de Vendas</strong></p>
-      <p>Um guia completo com técnicas para precificar seus bolos, vender bem no iFood, divulgar no WhatsApp e fidelizar clientes.</p>
-      <p style="margin-top:12px;"><strong>🎁 Certificado de Conclusão</strong></p>
-      <p>Modelo exclusivo e chique para você emitir com seu nome ao terminar o curso.</p>
+      <div class="bonus-item">
+        <div class="icone">🎁</div>
+        <div class="texto">
+          <strong>30 Recheios Especiais</strong>
+          <span>Brigadeiro Gourmet, Beijinho Cremoso, Ganache, Creme de Avelã, Buttercream, Merengue Italiano e muito mais!</span>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <div class="icone">📊</div>
+        <div class="texto">
+          <strong>Estratégias de Vendas</strong>
+          <span>Guia completo com técnicas para precificar, vender no iFood, divulgar no WhatsApp e fidelizar clientes.</span>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <div class="icone">📜</div>
+        <div class="texto">
+          <strong>Certificado de Conclusão</strong>
+          <span>Modelo exclusivo e chique — paisagem A4, fundo creme, moldura dourada — para você emitir com seu nome.</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- PARA QUEM É -->
   <section>
     <h2>Para Quem É Este Ebook</h2>
-    <div style="background:#fff; padding:20px 25px; border-radius:14px; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-      <p>✅ Quem quer começar na confeitaria e não sabe por onde</p>
-      <p>✅ Quem já faz bolos mas quer diversificar o cardápio</p>
-      <p>✅ Quem quer vender doces como renda extra</p>
-      <p>✅ Donas de casa que querem empreender da própria cozinha</p>
-      <p>✅ Confeiteiras que buscam receitas testadas e aprovadas</p>
+    <div class="para-quem">
+      <p>✅ Quem quer <strong>começar na confeitaria</strong> e não sabe por onde</p>
+      <p>✅ Quem já faz bolos mas quer <strong>diversificar o cardápio</strong></p>
+      <p>✅ Quem quer <strong>vender doces como renda extra</strong></p>
+      <p>✅ Donas de casa que querem <strong>empreender da própria cozinha</strong></p>
+      <p>✅ Confeiteiras que buscam <strong>receitas testadas e aprovadas</strong></p>
+      <p>✅ Quem quer <strong>aprender recheios profissionais</strong> para sofisticar os bolos</p>
     </div>
   </section>
 
@@ -331,14 +482,14 @@
     <div class="cert-box">
       <img src="certificado_imagem.jpg" alt="Modelo de Certificado">
       <p>Ao final, você pode emitir um <strong>certificado chique</strong> com seu nome, assinado por Carolina Ribeiro — perfeito para comprovar seu conhecimento e até incluir no currículo ou redes sociais.</p>
-      <p style="margin-top:10px; font-style:italic; color:#8a6b4a;">Modelo paisagem, fundo creme, moldura dourada e design exclusivo.</p>
+      <p style="margin-top:10px; font-style:italic; color:#8a6b4a;">Modelo paisagem A4 • Fundo creme • Moldura tripla dourada • Cantos ornamentais • Faixa dourada no topo</p>
     </div>
   </section>
 
   <!-- CTA -->
   <div class="cta">
     <h2>Garanta Seu Ebook Agora</h2>
-    <p>50 receitas + 30 recheios bônus + estratégias de vendas + certificado</p>
+    <p>50 receitas testadas + 30 recheios bônus + estratégias de vendas + certificado</p>
     <div class="preco">R$ 10,00 <small>/ à vista</small></div>
     <a class="btn" href="#">QUERO MEU EBOOK</a>
     <p class="aviso">Pagamento 100% seguro • Acesso vitalício • PDF para baixar</p>
